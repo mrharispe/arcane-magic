@@ -17,6 +17,7 @@ export default [
         output: {
             file: packageJSON.main,
             format: 'cjs',
+            sourcemap: true,
         },
         plugins: [
             peerDepsExternal(),
@@ -36,6 +37,7 @@ export default [
         output: {
             file: minifyExtension(packageJSON.main),
             format: 'cjs',
+            sourcemap: true,
         },
         plugins: [
             peerDepsExternal(),
@@ -63,6 +65,7 @@ export default [
                 '@emotion/styled': 'styled',
                 '@emotion/core': 'core',
             },
+            sourcemap: true,
         },
         plugins: [
             peerDepsExternal(),
@@ -88,6 +91,7 @@ export default [
                 '@emotion/styled': 'styled',
                 '@emotion/core': 'core',
             },
+            sourcemap: true,
         },
         plugins: [
             peerDepsExternal(),
@@ -110,6 +114,7 @@ export default [
             file: packageJSON.module,
             format: 'es',
             exports: 'named',
+            sourcemap: true,
         },
         plugins: [
             peerDepsExternal(),
@@ -130,6 +135,7 @@ export default [
             file: minifyExtension(packageJSON.module),
             format: 'es',
             exports: 'named',
+            sourcemap: true,
         },
         plugins: [
             peerDepsExternal(),
