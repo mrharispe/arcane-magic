@@ -1,6 +1,6 @@
 {
     "name": "arcane-magic",
-    "version": "1.0.0-alpha.2",
+    "version": "1.0.0-alpha.3",
     "description": "",
     "main": "lib/index.js",
     "browser": "lib/index.umd.js",
@@ -39,6 +39,7 @@
         "@rollup/plugin-node-resolve": "^9.0.0",
         "@rollup/plugin-typescript": "^6.0.0",
         "babel-loader": "^8.1.0",
+        "babel-plugin-emotion": "^10.0.33",
         "babel-plugin-module-resolver": "^4.0.0",
         "prettier": "^2.1.2",
         "react": "^16.14.0",
