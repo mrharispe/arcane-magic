@@ -1,10 +1,13 @@
 {
     "name": "arcane-magic",
-    "version": "1.0.0-alpha.0",
+    "version": "1.0.0-alpha.1",
     "description": "",
     "main": "lib/index.js",
     "browser": "lib/index.umd.js",
     "module": "lib/index.es.js",
+    "files": [
+        "/lib"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "styleguidist server",
