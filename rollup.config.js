@@ -7,7 +7,7 @@ import { uglify } from 'rollup-plugin-uglify';
 import { terser } from 'rollup-plugin-terser';
 
 import packageJSON from './package.json';
-const input = './src/public-api.js';
+const input = './src/index.js';
 const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, '.min.js');
 
 export default [

@@ -27,7 +27,7 @@ module.exports = {
             extensions: ['.tsx', '.ts', '.js'],
             modules: [path.resolve(__dirname, 'src/'), 'node_modules'],
             alias: {
-                'arcane-magic': path.join(__dirname, 'src/public-api.js'),
+                'arcane-magic': path.join(__dirname, 'src'),
             },
         },
         module: {
