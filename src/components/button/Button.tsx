@@ -4,6 +4,9 @@ import styled from "@emotion/styled";
 export interface IButton {
     /** The text to be displayed inside the button. */
     text: string,
+
+    /** Function to be called when the button is clicked. */
+    onClick: () => void
 }
 
 const Wrapper = styled.button`
@@ -17,8 +20,8 @@ const Wrapper = styled.button`
   cursor: pointer;
 `;
 
-const Button = ({ text }: IButton) => (
-    <Wrapper>{text}</Wrapper>
+const Button = (props: IButton) => (
+    <Wrapper onClick={props.onClick}>{props.text}</Wrapper>
 )
 
 export default Button
