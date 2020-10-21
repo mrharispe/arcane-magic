@@ -11,7 +11,7 @@
     "scripts": {
         "test": "jest",
         "start": "styleguidist server",
-        "build:doc": "styleguidist build",
+        "build:docs": "styleguidist build",
         "build": "rollup -c",
         "rebuild": "rm -rf lib && npm run build",
         "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
