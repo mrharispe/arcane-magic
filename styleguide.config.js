@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-    components: ['src/components/**/*.{ts,tsx}', 'src/models/**/*.ts'],
-    ignore: ['src/**/index.{ts,tsx}'],
+    title: 'Arcane Magic Components Library',
+    styleguideDir: 'dist-docs',
     getExampleFilename: cpath => {
         return cpath.replace(/\.(tsx?)$/, '.md');
     },
@@ -27,7 +27,7 @@ module.exports = {
             extensions: ['.tsx', '.ts', '.js'],
             modules: [path.resolve(__dirname, 'src/'), 'node_modules'],
             alias: {
-                styleguidist: path.join(__dirname, 'styleguidist'),
+                'arcane-magic': path.join(__dirname, 'src/public-api.js'),
             },
         },
         module: {
@@ -48,26 +48,6 @@ module.exports = {
                                 compilerOptions: {
                                     noEmit: false,
                                 },
-                            },
-                        },
-                    ],
-                },
-                {
-                    test: /\.css$/,
-                    loader: 'style-loader!css-loader?modules',
-                },
-                {
-                    test: /\.svg$/,
-                    loader: 'url-loader',
-                },
-                {
-                    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [
-                        {
-                            loader: 'url-loader',
-                            options: {
-                                name: '[name].[ext]',
-                                outputPath: 'fonts/',
                             },
                         },
                     ],

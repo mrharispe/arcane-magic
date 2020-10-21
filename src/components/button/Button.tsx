@@ -8,7 +8,7 @@ export interface IButton {
 
 const Wrapper = styled.button`
   letter-spacing: 1px;
-  background: #1d5ae0;
+  background: #2b61c4;
   color: whitesmoke;
   border: none;
   border-radius: 5px;
