@@ -9,23 +9,33 @@ export enum ButtonBending {
 
 export enum ButtonElement {
     Water = '#3079ff',
-    Earth = 'green',
-    Fire = 'red',
-    Air = 'grey',
+    Earth = '#47a547',
+    Fire = '#cc0d0d',
+    Air = '#777676',
 }
 
 export interface IButton {
-    /** Defines the text within the button. */
+    /**
+     * Defines the text within the button
+     */
     text?: string;
 
-    /** Defines the shape. */
-    bending?: ButtonBending;
+    /**
+     * Defines the shape
+     * @default ButtonBending.Solid
+     */
+    bending: ButtonBending;
 
-    /** Defines the color. */
-    element?: ButtonElement;
+    /**
+     * Defines the color
+     * @default ButtonElement.Water
+     */
+    element: ButtonElement;
 
-    /** Defines the action when clicked. */
-    onClick?: () => void;
+    /**
+     * Defines the action when clicked
+     */
+    onClick: () => void;
 }
 
 // border: 2px solid ${props => props.element};
@@ -52,7 +62,7 @@ const Wrapper = styled.button<IButton>`
     outline: none;
     border-radius: 4px;
     padding: 8px 16px;
-    margin: 0 8px;
+    margin: 4px 8px;
     font-weight: 600;
     cursor: pointer;
     box-shadow: ${props =>
@@ -63,13 +73,11 @@ const Wrapper = styled.button<IButton>`
 `;
 
 const Button: React.FC<IButton> = (props: IButton) => {
-    const styledComponentPrps = {
-        bending: props.bending ?? ButtonBending.Solid,
-        element: props.element ?? ButtonElement.Water,
-        ...props,
-    };
+    const styledComponentProps = { ...props };
+    styledComponentProps.bending = props.bending ?? ButtonBending.Solid;
+    styledComponentProps.element = props.element ?? ButtonElement.Water;
 
-    return <Wrapper {...styledComponentPrps}>{props.text}</Wrapper>;
+    return <Wrapper {...styledComponentProps}>{props.text}</Wrapper>;
 };
 
 export default Button;
