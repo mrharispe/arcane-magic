@@ -27,8 +27,6 @@ export interface IButton {
     onClick: () => void;
 }
 
-// border: 2px solid ${props => props.element};
-
 const Wrapper = styled.button<IButton>`
     letter-spacing: 0.25px;
     border: ${props => {
