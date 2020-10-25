@@ -3,3 +3,4 @@ export {
     ButtonBending,
     ButtonElement,
 } from 'components/button/Button';
+export { Element } from './element.ts';

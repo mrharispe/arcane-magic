@@ -9,80 +9,80 @@ import { Button } from 'arcane-magic';
 Four elements can be used: Water, Earth, Fire, Air. Long ago, the four nations lived together in harmony.
 
 ```jsx
-import { Button, ButtonBending, ButtonElement } from 'arcane-magic';
+import { Button, ButtonBending, Element } from 'arcane-magic';
 
 <>
-    <Button element={ButtonElement.Water} text="Water" />
-    <Button element={ButtonElement.Earth} text="Earth" />
-    <Button element={ButtonElement.Fire} text="Fire" />
-    <Button element={ButtonElement.Air} text="Air" />
+    <Button element={Element.Water} text="Water" />
+    <Button element={Element.Earth} text="Earth" />
+    <Button element={Element.Fire} text="Fire" />
+    <Button element={Element.Air} text="Air" />
 </>;
 ```
 
 One can bend the shape of a Button into three forms: Solid, Shallow and Bare.
 
 ```jsx
-import { Button, ButtonBending, ButtonElement } from 'arcane-magic';
+import { Button, ButtonBending, Element } from 'arcane-magic';
 
 <div style={{ display: 'grid', gridTemplateColumns: '160px 160px 160px' }}>
     <Button
         bending={ButtonBending.Solid}
-        element={ButtonElement.Water}
+        element={Element.Water}
         text="Solid Water"
     />
     <Button
         bending={ButtonBending.Shallow}
-        element={ButtonElement.Water}
+        element={Element.Water}
         text="Shallow Water"
     />
     <Button
         bending={ButtonBending.Bare}
-        element={ButtonElement.Water}
+        element={Element.Water}
         text="Bare Water"
     />
     <Button
         bending={ButtonBending.Solid}
-        element={ButtonElement.Earth}
+        element={Element.Earth}
         text="Solid Earth"
     />
     <Button
         bending={ButtonBending.Shallow}
-        element={ButtonElement.Earth}
+        element={Element.Earth}
         text="Shallow Earth"
     />
     <Button
         bending={ButtonBending.Bare}
-        element={ButtonElement.Earth}
+        element={Element.Earth}
         text="Bare Earth"
     />
     <Button
         bending={ButtonBending.Solid}
-        element={ButtonElement.Fire}
+        element={Element.Fire}
         text="Solid Fire"
     />
     <Button
         bending={ButtonBending.Shallow}
-        element={ButtonElement.Fire}
+        element={Element.Fire}
         text="Shallow Fire"
     />
     <Button
         bending={ButtonBending.Bare}
-        element={ButtonElement.Fire}
+        element={Element.Fire}
         text="Bare Fire"
     />
     <Button
         bending={ButtonBending.Solid}
-        element={ButtonElement.Air}
+        element={Element.Air}
         text="Solid Air"
     />
     <Button
         bending={ButtonBending.Shallow}
-        element={ButtonElement.Air}
+        element={Element.Air}
         text="Shallow Air"
     />
     <Button
         bending={ButtonBending.Bare}
-        element={ButtonElement.Air}
+        element={Element.Air}
         text="Bare Air"
     />
 </div>;

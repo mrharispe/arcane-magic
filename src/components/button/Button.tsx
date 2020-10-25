@@ -1,17 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Element } from '../../element';
 
 export enum ButtonBending {
     Solid = 'solid',
     Shallow = 'shallow',
     Bare = 'bare',
-}
-
-export enum ButtonElement {
-    Water = '#3079ff',
-    Earth = '#47a547',
-    Fire = '#cc0d0d',
-    Air = '#777676',
 }
 
 export interface IButton {
@@ -28,9 +22,9 @@ export interface IButton {
 
     /**
      * Defines the color
-     * @default ButtonElement.Water
+     * @default Element.Water
      */
-    element: ButtonElement;
+    element: Element;
 
     /**
      * Defines the action when clicked
@@ -75,7 +69,7 @@ const Wrapper = styled.button<IButton>`
 const Button: React.FC<IButton> = (props: IButton) => {
     const styledComponentProps = { ...props };
     styledComponentProps.bending = props.bending ?? ButtonBending.Solid;
-    styledComponentProps.element = props.element ?? ButtonElement.Water;
+    styledComponentProps.element = props.element ?? Element.Water;
 
     return <Wrapper {...styledComponentProps}>{props.text}</Wrapper>;
 };
