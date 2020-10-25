@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Element } from '../../element';
-
-export enum ButtonBending {
-    Solid = 'solid',
-    Shallow = 'shallow',
-    Bare = 'bare',
-}
+import { ButtonBending } from './types/button-bending';
 
 export interface IButton {
     /**
