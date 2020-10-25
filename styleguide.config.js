@@ -3,6 +3,16 @@ const path = require('path');
 module.exports = {
     title: 'Arcane Magic Components Library',
     styleguideDir: 'dist-docs',
+    styles: {
+        Table: {
+            cell: {
+                '&:nth-of-type(2)': {
+                    width: '30%',
+                    padding: '8px 0',
+                },
+            },
+        },
+    },
     getExampleFilename: cpath => {
         return cpath.replace(/\.(tsx?)$/, '.md');
     },
