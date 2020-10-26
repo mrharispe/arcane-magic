@@ -1,3 +1,3 @@
-export { default as Button } from 'components/button/Button';
-export { ButtonBending } from 'components/button/types/button-bending.ts';
-export { Element } from './element.ts';
+export { default as Button } from './components/button/Button.tsx';
+export * from './components/button/types/button-bending.ts';
+export * from './element.ts';
