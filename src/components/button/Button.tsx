@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Element } from '../../element';
 import { ButtonBending } from './types/button-bending';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export interface IButton {
     /**
@@ -20,6 +21,12 @@ export interface IButton {
      * @default Element.Water
      */
     element: Element;
+
+    /**
+     * Defines the color
+     * @default Element.Water
+     */
+    icon?: typeof FontAwesomeIcon;
 
     /**
      * Defines the action when clicked
@@ -64,7 +71,16 @@ const Button: React.FC<IButton> = (props: IButton) => {
     styledComponentProps.bending = props.bending ?? ButtonBending.Solid;
     styledComponentProps.element = props.element ?? Element.Water;
 
-    return <Wrapper {...styledComponentProps}>{props.text}</Wrapper>;
+    return (
+        <Wrapper {...styledComponentProps}>
+            {props.icon && (
+                <span style={{ paddingRight: props.text ? 8 : 0 }}>
+                    {props.icon}
+                </span>
+            )}
+            {props.text}
+        </Wrapper>
+    );
 };
 
 export default Button;

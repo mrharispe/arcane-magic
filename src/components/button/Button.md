@@ -6,16 +6,33 @@ import { Button } from 'arcane-magic';
 <Button text="Water" />;
 ```
 
+In case you need icons, FontAwesomeIcons are supported
+
+```jsx
+import { Button } from 'arcane-magic';
+import { faTint } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+<Button text="Water" icon={<FontAwesomeIcon icon={faTint} />} />;
+```
+
 Four elements can be used: Water, Earth, Fire, Air. Long ago, the four nations lived together in harmony.
 
 ```jsx
 import { Button, ButtonBending, Element } from 'arcane-magic';
+import {
+    faTint,
+    faLeaf,
+    faFire,
+    faWind,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 <>
-    <Button element={Element.Water} text="Water" />
-    <Button element={Element.Earth} text="Earth" />
-    <Button element={Element.Fire} text="Fire" />
-    <Button element={Element.Air} text="Air" />
+    <Button element={Element.Water} icon={<FontAwesomeIcon icon={faTint} />} />
+    <Button element={Element.Earth} icon={<FontAwesomeIcon icon={faLeaf} />} />
+    <Button element={Element.Fire} icon={<FontAwesomeIcon icon={faFire} />} />
+    <Button element={Element.Air} icon={<FontAwesomeIcon icon={faWind} />} />
 </>;
 ```
 
@@ -23,67 +40,74 @@ One can bend the shape of a Button into three forms: Solid, Shallow and Bare.
 
 ```jsx
 import { Button, ButtonBending, Element } from 'arcane-magic';
+import {
+    faTint,
+    faLeaf,
+    faFire,
+    faWind,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-<div style={{ display: 'grid', gridTemplateColumns: '160px 160px 160px' }}>
+<div style={{ display: 'grid', gridTemplateColumns: '70px 70px 70px' }}>
     <Button
         bending={ButtonBending.Solid}
         element={Element.Water}
-        text="Solid Water"
+        icon={<FontAwesomeIcon icon={faTint} />}
     />
     <Button
         bending={ButtonBending.Shallow}
         element={Element.Water}
-        text="Shallow Water"
+        icon={<FontAwesomeIcon icon={faTint} />}
     />
     <Button
         bending={ButtonBending.Bare}
         element={Element.Water}
-        text="Bare Water"
+        icon={<FontAwesomeIcon icon={faTint} />}
     />
     <Button
         bending={ButtonBending.Solid}
         element={Element.Earth}
-        text="Solid Earth"
+        icon={<FontAwesomeIcon icon={faLeaf} />}
     />
     <Button
         bending={ButtonBending.Shallow}
         element={Element.Earth}
-        text="Shallow Earth"
+        icon={<FontAwesomeIcon icon={faLeaf} />}
     />
     <Button
         bending={ButtonBending.Bare}
         element={Element.Earth}
-        text="Bare Earth"
+        icon={<FontAwesomeIcon icon={faLeaf} />}
     />
     <Button
         bending={ButtonBending.Solid}
         element={Element.Fire}
-        text="Solid Fire"
+        icon={<FontAwesomeIcon icon={faFire} />}
     />
     <Button
         bending={ButtonBending.Shallow}
         element={Element.Fire}
-        text="Shallow Fire"
+        icon={<FontAwesomeIcon icon={faFire} />}
     />
     <Button
         bending={ButtonBending.Bare}
         element={Element.Fire}
-        text="Bare Fire"
+        icon={<FontAwesomeIcon icon={faFire} />}
     />
     <Button
         bending={ButtonBending.Solid}
         element={Element.Air}
-        text="Solid Air"
+        icon={<FontAwesomeIcon icon={faWind} />}
     />
     <Button
         bending={ButtonBending.Shallow}
         element={Element.Air}
-        text="Shallow Air"
+        icon={<FontAwesomeIcon icon={faWind} />}
     />
     <Button
         bending={ButtonBending.Bare}
         element={Element.Air}
-        text="Bare Air"
+        icon={<FontAwesomeIcon icon={faWind} />}
     />
 </div>;
 ```
