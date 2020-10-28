@@ -1,6 +1,6 @@
 {
     "name": "arcane-magic",
-    "version": "1.0.0-alpha.13",
+    "version": "1.0.0-alpha.14",
     "description": "",
     "main": "lib/index.js",
     "browser": "lib/index.umd.js",
@@ -27,21 +27,17 @@
         "url": "https://github.com/mrharispe/arcane-magic/issues"
     },
     "homepage": "https://github.com/mrharispe/arcane-magic#readme",
-    "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.32",
-        "@fortawesome/free-brands-svg-icons": "^5.15.1",
-        "@fortawesome/free-solid-svg-icons": "^5.15.1",
-        "@fortawesome/react-fontawesome": "^0.1.12",
-        "@types/styled-components": "^5.1.4"
-    },
     "devDependencies": {
         "@babel/core": "^7.12.3",
         "@babel/plugin-transform-runtime": "^7.12.1",
         "@babel/preset-env": "^7.12.1",
         "@babel/preset-flow": "^7.12.1",
         "@babel/preset-react": "^7.12.1",
-        "@babel/preset-typescript": "^7.12.1",
         "@babel/runtime": "^7.12.1",
+        "@fortawesome/fontawesome-svg-core": "^1.2.32",
+        "@fortawesome/free-brands-svg-icons": "^5.15.1",
+        "@fortawesome/free-solid-svg-icons": "^5.15.1",
+        "@fortawesome/react-fontawesome": "^0.1.12",
         "@rollup/plugin-babel": "^5.2.1",
         "@rollup/plugin-commonjs": "^15.1.0",
         "@rollup/plugin-node-resolve": "^9.0.0",
@@ -71,6 +67,10 @@
         "webpack": "^4.44.0"
     },
     "peerDependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.X",
+        "@fortawesome/free-brands-svg-icons": "^5.X",
+        "@fortawesome/free-solid-svg-icons": "^5.X",
+        "@fortawesome/react-fontawesome": "^0.X",
         "@types/styled-components": "^5.X",
         "styled-components": "^5.X",
         "react": "^16.x",
