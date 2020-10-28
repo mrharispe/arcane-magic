@@ -10,10 +10,16 @@ In case you need icons, FontAwesomeIcons are supported
 
 ```jsx
 import { Button } from 'arcane-magic';
-import { faTint } from '@fortawesome/free-solid-svg-icons';
+import { faTint, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-<Button text="Water" icon={<FontAwesomeIcon icon={faTint} />} />;
+<>
+    <Button text="Water" icon={<FontAwesomeIcon icon={faTint} />} />
+    <Button
+        text="Channeling..."
+        icon={<FontAwesomeIcon icon={faSpinner} spin />}
+    />
+</>;
 ```
 
 Four elements can be used: Water, Earth, Fire, Air. Long ago, the four nations lived together in harmony.
@@ -110,4 +116,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
         icon={<FontAwesomeIcon icon={faWind} />}
     />
 </div>;
+```
+
+Two shapes are available: Round (default) and Circle.
+
+```jsx
+import { Button, ButtonShape, Element } from 'arcane-magic';
+import {
+    faTint,
+    faLeaf,
+    faFire,
+    faWind,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+<>
+    <Button
+        shape={ButtonShape.Square}
+        element={Element.Water}
+        icon={<FontAwesomeIcon icon={faTint} />}
+    />
+    <Button
+        shape={ButtonShape.Round}
+        element={Element.Earth}
+        icon={<FontAwesomeIcon icon={faLeaf} />}
+    />
+    <Button
+        shape={ButtonShape.Circle}
+        element={Element.Fire}
+        icon={<FontAwesomeIcon icon={faFire} />}
+    />
+</>;
 ```

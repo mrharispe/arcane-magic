@@ -2,7 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Element } from '../../element';
 import { ButtonBending } from './types/button-bending';
+import { ButtonShape } from './types/button-shape';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    baseButton,
+    buttonCircle,
+    buttonCircleNoText,
+    buttonRounded,
+} from './Button.styles';
 
 export interface IButton {
     /**
@@ -11,10 +18,16 @@ export interface IButton {
     text?: string;
 
     /**
-     * Defines the shape
+     * Defines the variant
      * @default ButtonBending.Solid
      */
     bending: ButtonBending;
+
+    /**
+     * Defines the shape
+     * @default ButtonShape.Round
+     */
+    shape: ButtonShape;
 
     /**
      * Defines the color
@@ -24,7 +37,6 @@ export interface IButton {
 
     /**
      * Defines the color
-     * @default Element.Water
      */
     icon?: typeof FontAwesomeIcon;
 
@@ -34,8 +46,30 @@ export interface IButton {
     onClick: () => void;
 }
 
+const Icon = styled.span<{ hasText: boolean }>`
+    ${props => {
+        if (props.hasText) {
+            return `padding-right: 8px`;
+        } else {
+            return `
+                width: 36px;
+                height: 36px;
+                padding-right: 0;
+            `;
+        }
+    }}
+`;
+
 const Wrapper = styled.button<IButton>`
-    letter-spacing: 0.25px;
+    ${baseButton}
+    ${props => {
+        if (props.shape === ButtonShape.Circle) {
+            return props.text ? buttonCircle : buttonCircleNoText;
+        } else if (props.shape === ButtonShape.Round) {
+            return buttonRounded;
+        }
+    }}
+
     border: ${props => {
         if (props.bending === ButtonBending.Bare) {
             return '2px solid transparent';
@@ -53,17 +87,10 @@ const Wrapper = styled.button<IButton>`
             ? 'whitesmoke'
             : props.element;
     }};
-    outline: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    margin: 4px 8px;
-    font-weight: 600;
-    cursor: pointer;
     box-shadow: ${props =>
         props.bending === ButtonBending.Bare
             ? 'none'
             : '-2px 2px 2px rgba(0, 0, 0, 0.145)'};
-    font-size: 14px;
 `;
 
 const Button: React.FC<IButton> = (props: IButton) => {
@@ -73,11 +100,7 @@ const Button: React.FC<IButton> = (props: IButton) => {
 
     return (
         <Wrapper {...styledComponentProps}>
-            {props.icon && (
-                <span style={{ paddingRight: props.text ? 8 : 0 }}>
-                    {props.icon}
-                </span>
-            )}
+            {props.icon && <Icon hasText={!!props.text}>{props.icon}</Icon>}
             {props.text}
         </Wrapper>
     );
