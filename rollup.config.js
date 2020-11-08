@@ -18,6 +18,10 @@ export default [
             file: packageJSON.main,
             format: 'cjs',
             sourcemap: true,
+            globals: {
+                react: 'React',
+                'styled-components': 'styled',
+            },
         },
         plugins: [
             peerDepsExternal(),
@@ -29,7 +33,7 @@ export default [
             nodeResolve(),
             commonjs(),
         ],
-        external: [/@babel\/runtime/],
+        external: [/@babel\/runtime/, 'styled-components'],
     },
     // Minified CommonJS
     {
@@ -38,6 +42,10 @@ export default [
             file: minifyExtension(packageJSON.main),
             format: 'cjs',
             sourcemap: true,
+            globals: {
+                react: 'React',
+                'styled-components': 'styled',
+            },
         },
         plugins: [
             peerDepsExternal(),
@@ -50,7 +58,7 @@ export default [
             commonjs(),
             uglify(),
         ],
-        external: [/@babel\/runtime/],
+        external: [/@babel\/runtime/, 'styled-components'],
     },
 
     // UMD
@@ -62,8 +70,7 @@ export default [
             name: 'arcaneMagic',
             globals: {
                 react: 'React',
-                '@emotion/styled': 'styled',
-                '@emotion/core': 'core',
+                'styled-components': 'styled',
             },
             sourcemap: true,
         },
@@ -77,7 +84,7 @@ export default [
             nodeResolve(),
             commonjs(),
         ],
-        external: [/@babel\/runtime/],
+        external: [/@babel\/runtime/, 'styled-components'],
     },
     // Minified UMD
     {
@@ -88,8 +95,7 @@ export default [
             name: 'arcaneMagic',
             globals: {
                 react: 'React',
-                '@emotion/styled': 'styled',
-                '@emotion/core': 'core',
+                'styled-components': 'styled',
             },
             sourcemap: true,
         },
@@ -104,7 +110,7 @@ export default [
             commonjs(),
             terser(),
         ],
-        external: [/@babel\/runtime/],
+        external: [/@babel\/runtime/, 'styled-components'],
     },
 
     // ES
@@ -115,6 +121,10 @@ export default [
             format: 'es',
             exports: 'named',
             sourcemap: true,
+            globals: {
+                react: 'React',
+                'styled-components': 'styled',
+            },
         },
         plugins: [
             peerDepsExternal(),
@@ -126,7 +136,7 @@ export default [
             nodeResolve(),
             commonjs(),
         ],
-        external: [/@babel\/runtime/],
+        external: [/@babel\/runtime/, 'styled-components'],
     },
     // Minified ES
     {
@@ -136,6 +146,10 @@ export default [
             format: 'es',
             exports: 'named',
             sourcemap: true,
+            globals: {
+                react: 'React',
+                'styled-components': 'styled',
+            },
         },
         plugins: [
             peerDepsExternal(),
@@ -148,6 +162,6 @@ export default [
             commonjs(),
             terser(),
         ],
-        external: [/@babel\/runtime/],
+        external: [/@babel\/runtime/, 'styled-components'],
     },
 ];

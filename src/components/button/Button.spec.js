@@ -1,7 +1,6 @@
 import { render, getByText, fireEvent } from '@testing-library/react';
 import React from 'react';
 import Button from './Button';
-import { Element } from '../../element.ts';
 
 describe('Button', () => {
     test('should have a label', () => {
