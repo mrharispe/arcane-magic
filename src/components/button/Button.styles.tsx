@@ -5,7 +5,6 @@ export const baseButton = css`
     letter-spacing: 0.25px;
     height: 36px;
     width: auto;
-    border: 2px solid transparent;
     background-color: ${Element.Water}
     color: whitesmoke;
     outline: none;
@@ -16,6 +15,8 @@ export const baseButton = css`
     cursor: pointer;
     box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.145);
     font-size: 14px;
+    background-position: center;
+    transition: background 0.6s;    
 `;
 
 export const buttonRounded = css`

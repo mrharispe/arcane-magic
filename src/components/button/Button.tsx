@@ -71,26 +71,61 @@ const Wrapper = styled.button<IButton>`
     }}
 
     border: ${props => {
-        if (props.bending === ButtonBending.Bare) {
-            return '2px solid transparent';
-        } else {
+        if (props.bending === ButtonBending.Shallow) {
             return `2px solid ${props.element}`;
+        } else {
+            return 'none';
         }
     }};
+
     background-color: ${props => {
         return props.bending === ButtonBending.Solid
             ? props.element
             : 'transparent';
     }};
+
     color: ${props => {
         return props.bending === ButtonBending.Solid
             ? 'whitesmoke'
             : props.element;
     }};
+
     box-shadow: ${props =>
         props.bending === ButtonBending.Bare
             ? 'none'
             : '-2px 2px 2px rgba(0, 0, 0, 0.145)'};
+
+    :hover {
+        background: ${props =>
+                props.element +
+                (props.bending === ButtonBending.Solid ? 'AA' : '40')}
+            radial-gradient(
+                circle,
+                transparent 1%,
+                ${props => props.element + '60'} 1%
+            )
+            center/15000%;
+    }
+
+    :focus {
+        background: ${props =>
+                props.element +
+                (props.bending === ButtonBending.Solid ? 'CC' : '40')}
+            radial-gradient(
+                circle,
+                transparent 1%,
+                ${props => props.element + '60'} 1%
+            )
+            center/15000%;
+    }
+
+    :active {
+        background-color: ${props =>
+            props.element +
+            (props.bending === ButtonBending.Solid ? '99' : '10')};
+        background-size: 100%;
+        transition: background 0s;
+    }
 `;
 
 const Button: React.FC<IButton> = (props: IButton) => {
